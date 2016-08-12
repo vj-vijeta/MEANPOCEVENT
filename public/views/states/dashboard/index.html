@@ -1,0 +1,138 @@
+<div class="row row-xs">
+    <div class="col-sm-4">
+        <div class="panel panel-card">
+            <div class="p">Customers </div>
+            <div class="panel-body text-center">
+                <div class="m-v-lg">
+                    Total accounts
+                    <div class="h2 text-success font-bold">{{counts.customers.total}}</div>
+                </div>
+            </div>
+            <div class="b-t b-light p">
+                Composite
+                <div class="progress progress-striped progress-sm r m-v-sm">
+                    <div class="progress-bar {{app.setting.theme.accent}}" style="width:{{counts.customers.activePercent}}%">{{counts.customers.activePercent}}% Active</div>
+                    <div class="progress-bar {{app.setting.theme.warn}}" style="width:{{counts.customers.inActivePercent}}%">{{counts.customers.inActivePercent}}% Inactive</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-card p m-b-sm">
+            <h5 class="m-b-lg">Visits</h5>
+            <div class="text-center">
+                <div class="inline">
+                    <div ui-jp="easyPieChart" ui-options="{
+                        percent: counts.events.completedPercent,
+                        lineWidth: 12,
+                        trackColor: '{{app.color.light}}',
+                        barColor: '{{app.color.success}}',
+                        scaleColor: '#fff',
+                        size: 167,
+                        lineCap: 'butt',
+                        color: '{{color}}',
+                        animate: 3000,
+                        rotate: 270
+                        }" ng-init="color = getColor(app.setting.theme.primary, 400)">
+                        <div class="font-bold text-warning"> {{counts.events.completedPercent}}%<br><br>Completed</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div><strong>{{counts.visits.total}}</strong> total</div>
+                <!-- <small class="text-muted">Next task: 19:30 Thu</small>  -->
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-card p m-b-sm">
+            <h5 class="m-b-lg">Events</h5>
+            <div class="text-center">
+                <div class="inline">
+                    <div ui-jp="easyPieChart" ui-options="{
+                        percent: counts.events.completedPercent,
+                        lineWidth: 12,
+                        trackColor: '{{app.color.light}}',
+                        barColor: '{{app.color.success}}',
+                        scaleColor: '#fff',
+                        size: 167,
+                        lineCap: 'butt',
+                        color: '{{color}}',
+                        animate: 3000,
+                        rotate: 270
+                        }" ng-init="color = getColor(app.setting.theme.primary, 400)">
+                        <div class="font-bold text-warning"> {{counts.events.completedPercent}}%<br><br>Completed</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div><strong>{{counts.events.total}}</strong> total</div>
+                <!-- <small class="text-muted">Next task: 19:30 Thu</small>  -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-xs">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading tabletitle">Upcoming Visits</div>
+            <div class="tablebox table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Case Id</th>
+                            <th>Visit Date / Time</th>
+                            <th>Customer Name</th>
+                            <th>Venue Name</th>
+                            <th>Event Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="visits.length == 0">
+                            <td colspan="5">No Data</td>
+                        </tr>
+                        <tr ng-repeat="visit in visits">
+                            <td>{{visit.caseId}}</td>
+                            <td>{{visit.visitDate | date: 'medium'}}</td>
+                            <td>{{visit.customer.name}}</td>
+                            <td>{{visit.venue.name}}</td>
+                            <td>{{visit.eventtype.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <uib-pagination total-items="totalVisits" max-size="5" items-per-page="visitsPerPage" ng-model="currentPageVisit" ng-change="pageChangedVisit()"></uib-pagination>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading tabletitle">Upcoming Events</div>
+            <div class="tablebox table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Case Id</th>
+                            <th>Event Date / Time</th>
+                            <th>Customer Name</th>
+                            <th>Venue Name</th>
+                            <th>Event Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="events.length == 0">
+                            <td colspan="5">No Data</td>
+                        </tr>
+                        <tr ng-repeat="event in events">
+                            <td>{{event.caseId}}</td>
+                            <td>{{event.eventDate | date: 'medium'}}</td>
+                            <td>{{event.customer.name}}</td>
+                            <td>{{event.venue.name}}</td>
+                            <td>{{event.eventtype.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <uib-pagination total-items="totalEvents" max-size="5" items-per-page="eventsPerPage" ng-model="currentPageEvent" ng-change="pageChangedEvent()"></uib-pagination>
+            </div>
+        </div>
+    </div>
+</div>

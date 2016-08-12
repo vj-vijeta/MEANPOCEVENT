@@ -1,0 +1,17 @@
+<!-- aside -->
+<!--<md-sidenav id="aside" class="app-aside md-sidenav-left" ng-class="{'folded': app.setting.asideFolded || $state.current.data.folded}" ui-view="aside@" md-component-id="aside"> -->
+<md-sidenav id="aside" class="app-aside md-sidenav-left" ng-class="" ui-view="aside@" md-component-id="aside">
+</md-sidenav>
+<!-- / aside -->
+<!-- content -->
+<div id="content" class="app-content" role="main"  ui-view="content@">
+</div>
+<!-- / content -->
+<div class="modal fade" id="user" data-backdrop="false">
+	<div class="right w-xl bg-white md-whiteframe-z2" ng-include="'/views/states/partials/aside.tpl.user.html'">
+	</div>
+</div>
+<div class="modal fade" id="chat" data-backdrop="false">
+	<div class="right w-xxl bg-white md-whiteframe-z2" ng-include="'/views/states/partials/aside.tpl.chat.html'">
+	</div>
+</div>
