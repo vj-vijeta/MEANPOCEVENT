@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
-var cluster 		= require('cluster');
+
 
 var mongoose = require('mongoose');
 console.log("connecting mongo")
