@@ -8,15 +8,12 @@
  * @return {[type]}                  null
  */
 
-App.controller('CtrlSignin', ['$scope', '$rootScope', '$state', '$mdToast', '$localStorage', 'cfpLoadingBar', 'FactAuthService', 'FactMasterService', function($scope, $rootScope, $state, $mdToast, $localStorage, cfpLoadingBar, FactAuthService, FactMasterService) {
-	console.log($scope)
+App.controller('CtrlSignin', ['$scope', '$rootScope', '$state', '$localStorage', 'cfpLoadingBar', 'FactAuthService', function($scope, $rootScope, $state, $localStorage, cfpLoadingBar, FactAuthService) {
 	/**
 	 * Form data like, email, password
 	 * @type {Object}
 	 */
-	$scope.formData = {
-		remember: false
-	};
+	$scope.formData = {};
 
 	/**
 	 * Server error message
@@ -38,50 +35,28 @@ App.controller('CtrlSignin', ['$scope', '$rootScope', '$state', '$mdToast', '$lo
 			cfpLoadingBar.start();
 			
 			FactAuthService.signin($scope.formData, function(data) {
-				if(data.success === true) {
-					localStorage.signinToken = data.result.token;
-					var userDetails = angular.copy(data.result);
-
-					cfpLoadingBar.start();
-
-					FactMasterService.getAllMastersWithNoCat({}, function(data) {
-						console.log($localStorage, data);
-
-						if(data.success == true) {
-
-							$localStorage.masters = {};
-							
-							angular.forEach(data.result, function(master) {
-
-								angular.forEach(master, function(val, key){
-									$localStorage.masters[key] = val;
-								})
-							});
-
-							$state.transitionTo('dashboard.index');
-						} else {
-							$state.transitionTo('dashboard.index');
-						}
-					});
-					// $state.transitionTo('dashboard.index');
-				} else {
-					
-					$mdToast.show(
-						$mdToast.simple()
-							.textContent(data.result)
-							.position('top right')
-							.hideDelay(3000)
-					);
-					// $scope.errorMessage = data.message || 'Invalid Login details';
-				}
+				$localStorage.current = data.user;
 			}, function(error) {
-				console.log(error)
-				$mdToast.show(
-					$mdToast.simple()
-						.textContent(error.data.result)
-						.position('top right')
-						.hideDelay(3000)
-				);
+				$scope.errorMessage = error.data.msg || error.data[0].msg;
+
+				// $localStorage.current = {
+				// 	_id: 4,
+				// 	name: 'Jitesh Tukadiya',
+				// 	type: 'user',
+				// 	email: 'jitesh@tukadiya.com',
+				// 	admin: {
+				// 		_id: 3,
+				// 		name: 'Jitesh Rklick',
+				// 		email: 'jitesh@rklick.com',
+				// 		type: 'admin'
+				// 	},
+				// 	tenant: {
+				// 		_id: 2,
+				// 		name: 'Rklick Tenant',
+				// 		email: 'tenant@rklick.com',
+				// 		type: 'tenant'
+				// 	}
+				// }
 			});
 		}
 

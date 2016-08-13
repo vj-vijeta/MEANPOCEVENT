@@ -1,45 +1,16 @@
-<div class="indigo bg-big">
-    <div class="fade-in-down smooth">
-        <div class="center-block w-xxl w-auto-xs p-v-md signinwidth">
-            <div class="navbar">
-                <div class="navbar-brand m-t-lg text-center">
-                    <img src="/assets/images/ora-logo.png" alt="" title="">
-                </div>
+<div class="panel-heading">
+    <h3 class="panel-title">Please Sign In</h3>
+</div>
+<div class="panel-body">
+    <form name="signinForm" role="form" ng-submit="doSignin()" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <input class="form-control" ng-model="formData.email" placeholder="E-mail" name="email" type="email" autofocus required>
             </div>
-            <p class="alert alert-error" ng-if="errorMessage" ng-bind="errorMessage"></p>
-            <div class="p-lg panel md-whiteframe-z1 text-color m">
-                <div class="m-b text-base">
-                    Sign in with your {{app.name}} Admin Account
-                </div>
-                <form name="signinForm" novalidate ng-submit="doSignin()">
-                    <md-input-container class="md-block">
-                        <label>Email</label>
-                        <input type="email" name="email" class="md-input" ng-model="formData.email" required ng-pattern="/^.+@.+\..+$/">
-                        <div ng-messages="signinForm.email.$error" role="alert">
-                            <div ng-message-exp="['required', 'pattern']">Please enter a valid email</div>
-                        </div>
-                    </md-input-container>
-                    <md-input-container class="md-block">
-                        <label>Password</label>
-                        <input type="password" name="password" class="md-input" ng-model="formData.password" required>
-                        <div ng-messages="signinForm.password.$error" role="alert">
-                            <div ng-message="required">Please enter password</div>
-                        </div>
-                    </md-input-container>
-                    <div class="m-b-md">
-                        <label class="md-check">
-                            <input type="checkbox" ng-model="formData.remember">
-                            <i class="green"></i> Keep me signed in
-                        </label>
-                    </div>
-                    <button md-ink-ripple type="submit" class="md-btn md-raised green btn-block p-h-md">Sign in</button>
-                </form>
+            <div class="form-group">
+                <input class="form-control" ng-model="formData.password" placeholder="Password" name="password" type="password" required />
             </div>
-            <div class="p-v-lg text-center">
-                <div class="m-b"><button ui-sref="auth.forgot()" class="md-btn">Forgot password?</button></div>
-                <!-- <div>Do not have an account? <button ui-sref="auth.signup()" class="md-btn">Create an account</button></div> -->
-                <div>Copyright © 2016 ORA.com</div>
-            </div>
-        </div>
-    </div>
+            <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+        </fieldset>
+    </form>
 </div>

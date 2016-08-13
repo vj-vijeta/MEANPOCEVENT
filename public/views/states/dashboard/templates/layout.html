@@ -1,17 +1,20 @@
-<!-- aside -->
-<!--<md-sidenav id="aside" class="app-aside md-sidenav-left" ng-class="{'folded': app.setting.asideFolded || $state.current.data.folded}" ui-view="aside@" md-component-id="aside"> -->
-<md-sidenav id="aside" class="app-aside md-sidenav-left" ng-class="" ui-view="aside@" md-component-id="aside">
-</md-sidenav>
-<!-- / aside -->
-<!-- content -->
-<div id="content" class="app-content" role="main"  ui-view="content@">
-</div>
-<!-- / content -->
-<div class="modal fade" id="user" data-backdrop="false">
-	<div class="right w-xl bg-white md-whiteframe-z2" ng-include="'/views/states/partials/aside.tpl.user.html'">
-	</div>
-</div>
-<div class="modal fade" id="chat" data-backdrop="false">
-	<div class="right w-xxl bg-white md-whiteframe-z2" ng-include="'/views/states/partials/aside.tpl.chat.html'">
+<div id="wrapper">	
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+		<div class="navbar-header">
+
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+		</div>
+
+		<div class="navbar-default sidebar" role="navigation" ui-view="aside@"></div>
+	</nav>
+
+	<div id="page-wrapper" style="min-height: 561px;">
+		<div ui-view="content@"></div>
 	</div>
 </div>

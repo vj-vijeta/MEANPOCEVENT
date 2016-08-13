@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/*', function(req, res, next) {
 	
 	var angular = {
 		controllers: fs.readdirSync(__dirname + '/../public/controllers'),
