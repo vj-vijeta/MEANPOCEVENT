@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
+var cluster 		= require('cluster');
 
 var mongoose = require('mongoose');
 console.log("connecting mongo")
@@ -12,6 +13,8 @@ mongoose.connect('mongodb://poc:poc@ds153815.mlab.com:53815/userevent');
 
 var routes = require('./routes/index');
 var api = require('./routes/api');
+
+
 
 var app = express();
 

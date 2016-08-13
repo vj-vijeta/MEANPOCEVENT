@@ -9,7 +9,7 @@ router.get('/*', function(req, res, next) {
 		controllers: fs.readdirSync(__dirname + '/../public/controllers'),
 		modules: fs.readdirSync(__dirname + '/../public/modules'),
 		factories: fs.readdirSync(__dirname + '/../public/factories'),
-		directives: fs.readdirSync(__dirname + '/../public/directives'),
+		// directives: fs.readdirSync(__dirname + '/../public/directives'),
 		// filters: fs.readdirSync(__dirname + '/../public/filters'),
 	};
 
