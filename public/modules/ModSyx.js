@@ -6,8 +6,10 @@ var App = angular
 		'ui.router',
 		'ui.bootstrap',
 		'angular-loading-bar',
+		'chart.js',
 		'FactInterceptors',
 		'FactAuth',
+		'FactEvents',
 	]);
 
 App.run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar', '$localStorage', function ($rootScope, $state, $stateParams, cfpLoadingBar, $localStorage) {
@@ -70,7 +72,7 @@ App.run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar', '$localStorage
 			data: { title: 'Login', folded: true }
 		})
 		.state('auth.signout', {
-			controller: 'CtrlSignout'
+			url: '/signout'
 		})
 		.state('dashboard', {
 			url: '/dashboard',
@@ -98,6 +100,15 @@ App.run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar', '$localStorage
 			templateUrl: '/views/states/dashboard/events.html',
 			controller: 'CtrlEvents',
 			data: { title: 'Events', folded: true }
+		})
+		.state('dashboard.event', {
+			url: '/event/:id',
+			params: {
+				id: null
+			},
+			templateUrl: '/views/states/dashboard/single-event.html',
+			controller: 'CtrlSingleEvent',
+			data: { title: 'Event', folded: true }
 		})
 	;
 

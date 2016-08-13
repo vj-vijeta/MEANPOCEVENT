@@ -9,7 +9,8 @@ angular.module('FactAuth', ['ngResource'])
 		}, {
 			signin: {
 				url: rootURL + '/login',
-				method: 'POST'
+				method: 'POST',
+				isArray: false
 			}
 		});
 	}]);

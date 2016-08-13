@@ -36,27 +36,9 @@ App.controller('CtrlSignin', ['$scope', '$rootScope', '$state', '$localStorage',
 			
 			FactAuthService.signin($scope.formData, function(data) {
 				$localStorage.current = data.user;
+				$state.transitionTo('dashboard.index');
 			}, function(error) {
 				$scope.errorMessage = error.data.msg || error.data[0].msg;
-
-				// $localStorage.current = {
-				// 	_id: 4,
-				// 	name: 'Jitesh Tukadiya',
-				// 	type: 'user',
-				// 	email: 'jitesh@tukadiya.com',
-				// 	admin: {
-				// 		_id: 3,
-				// 		name: 'Jitesh Rklick',
-				// 		email: 'jitesh@rklick.com',
-				// 		type: 'admin'
-				// 	},
-				// 	tenant: {
-				// 		_id: 2,
-				// 		name: 'Rklick Tenant',
-				// 		email: 'tenant@rklick.com',
-				// 		type: 'tenant'
-				// 	}
-				// }
 			});
 		}
 

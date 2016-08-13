@@ -1,31 +1,22 @@
 angular.module('FactInterceptors', [])
 	.factory('FactResourceInterceptor',['$q','$injector', '$rootScope',function($q, $injector, $rootScope){
 		return {
-			request: function(request) {
-
-				if(request.url.indexOf('/ajax/') > -1) {
-					// request.headers['x-access-token'] = localStorage.signinToken;
+			response: function(response) {
+				if (response.status === 401) {
+					// $location.url($meanConfig.loginPage);
+					return $q.reject(response);
 				}
-				return request;
+				return response || $q.when(response);
 			},
-            responseError: function(err) {
+			responseError: function(rejection) {
 
-                // console.log(err)
+				if (rejection.status === 401) {
+					// $location.url($meanConfig.loginPage);
+					return $q.reject(rejection);
+				}
+				return $q.reject(rejection);
+			}
 
-            	// if(err.status == 403) {
-            	// 	$injector.get('$state').transitionTo('auth.signout');
-                //     return $q.reject(err);
-            	// } else if(err.status == 500) {
-                //     if(typeof err.data != 'object') {
-                //         err.data = {
-                //             success: false,
-                //             result: 'Internal Server Error'
-                //         }
-                //     }
-                // }
-
-                return err;
-            }
 		};
 	}])
 	.config(['$httpProvider', function($httpProvider) {

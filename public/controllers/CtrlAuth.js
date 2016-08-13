@@ -1,4 +1,11 @@
-App.controller('CtrlAuth', ['$state', function($state) {
+App.controller('CtrlAuth', ['$state', '$localStorage', function($state, $localStorage) {
 	
-	// $state.transitionTo('auth.signin');
+	if($localStorage.current && $state.current.name != 'auth.signout') {
+		$state.transitionTo('dashboard.index');
+	} else if($state.current.name == 'auth.signout') {
+		$localStorage.current = undefined;
+		$state.transitionTo('auth.signin');
+	}
+	
+	return false;
 }]);
