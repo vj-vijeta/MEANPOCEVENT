@@ -1,47 +1,8 @@
 <div class="row">
-    <div id="chartapp">
+    <div id="chartapp" data-ng-init="init()">
         "chartcomponents"       
     </div>
-    <script type="text/javascript">
-    debugger;
-var components = new components();
-components.load("chartapp");
-</script>
     
-    <div class="col-lg-6 col-sm-12" id="line-chart">
-        <div class="panel panel-default">
-            <div class="panel-heading">Line Chart</div>
-            <div class="panel-body">
-                <canvas id="line" class="chart chart-line chart-xl" chart-data="line.data" chart-labels="line.labels" chart-legend="true" chart-click="line.onClick" chart-series="line.series"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="bar-chart">
-        <div class="panel panel-default">
-            <div class="panel-heading">Bar Chart</div>
-            <div class="panel-body">
-                <canvas id="bar" class="chart chart-bar" chart-data="bar.data" chart-labels="bar.labels" chart-series="bar.series" chart-options="bar.options"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-6 col-sm-12" id="doughnut-chart">
-        <div class="panel panel-default">
-            <div class="panel-heading">Doughnut Chart</div>
-            <div class="panel-body">
-                <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="donut.data" chart-labels="donut.labels" chart-legend="false"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="radar-chart">
-        <div class="panel panel-default">
-            <div class="panel-heading">Radar Chart</div>
-            <div class="panel-body">
-                <canvas id="area" class="chart chart-radar" chart-data="radar.data" chart-labels="radar.labels" chart-click="onClick"></canvas>
-            </div>
-        </div>
-    </div>
 </div>
 
 

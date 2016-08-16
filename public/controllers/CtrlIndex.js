@@ -33,5 +33,12 @@ App.controller('CtrlIndex', ['$scope', '$rootScope', function ($scope, $rootScop
             [28, 48, 40, 19, 96, 27, 100]
         ]
     };
+
+    $scope.init = function () {
+        // check if there is query in url
+        // and fire search in case its value is not empty
+        var c = new components();
+        c.load("chartapp");
+    };
     
 }]);
