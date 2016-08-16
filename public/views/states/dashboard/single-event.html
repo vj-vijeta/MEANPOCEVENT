@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{event.name}}
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                
+                <div class="alert alert-success" ng-show="purchased">Event Purchased</div>
+                <div class="alert alert-danger" ng-show="errorMessage">{{errorMessage}}</div>
+
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Event Name</th>
+                            <td>{{event.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{event.description}}</td>
+                        </tr>
+                        <tr>
+                            <th>Venue</th>
+                            <td>{{event.venue}}</td>
+                        </tr>
+                        <tr>
+                            <th>Start Date</th>
+                            <td>{{event.start | date:'medium'}}</td>
+                        </tr>
+                        <tr>
+                            <th>Price</th>
+                            <td>{{event.price}}/-</td>
+                        </tr>
+                        <tr>
+                            <th>Created By</th>
+                            <td>{{event.admin.name}}</td>
+                        </tr>
+                        <tr ng-if="!purchased">
+                            <th>&nbsp;</th>
+                            <td>
+                                <button class="btn btn-success" ng-click="confirmPurchase()" ng-disabled="purchaseInProgress">Confirm Purchase</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

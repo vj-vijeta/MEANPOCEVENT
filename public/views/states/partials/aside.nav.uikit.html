@@ -1,0 +1,305 @@
+<nav ui-nav>
+    <ul class="nav">
+        <li ui-sref-active="active">
+            <a md-ink-ripple ui-sref="dashboard.index">
+                <i class="navicon1"></i>
+                <span class="font-normal">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon16"></i>
+                <span class="font-normal">Manage Owners</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.owners">Owner List</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addOwner">Add Owner</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon3"></i>
+                <span class="font-normal">Manage Customers</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.customers">Customer List</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addCustomer">Add Customer</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon2"></i>
+                <span class="font-normal">Manage Venue</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.venues">Venue List</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple ui-sref="dashboard.quickTalk">
+                <i class="navicon14"></i>
+                <span class="font-normal">Quik Talk</span>
+            </a>
+        </li>
+        <li>
+            <a md-ink-ripple ui-sref="dashboard.visits">
+                <i class="navicon4"></i>
+                <span class="font-normal">Manage Visits</span>
+            </a>
+        </li>
+        <li>
+            <a md-ink-ripple ui-sref="dashboard.events">
+                <i class="navicon5"></i>
+                <span class="font-normal">Manage Events</span>
+            </a>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon6"></i>
+                <span class="font-normal">Calendar</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.visitCalendar">Visit Calendar</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.eventCalendar">Event Calendar</a>
+                </li>
+            </ul>
+        </li>
+        <!-- <li>
+            <a md-ink-ripple ui-sref="dashboard.payments">
+                <i class="navicon7"></i>
+                <span class="font-normal">Payments</span>
+            </a>
+        </li> -->
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon8"></i>
+                <span class="font-normal">Master</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li>
+                    <a md-ink-ripple>
+                        <span class="pull-right text-muted">
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                        <!-- <i class="navicon8"></i> -->
+                        <span class="font-normal">Home Page</span>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.bestSuitedFor">Best Suited For (Home Page)</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.eventType">Event Type</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.city">City</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.coupon">Coupons</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a md-ink-ripple>
+                        <span class="pull-right text-muted">
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                        <!-- <i class="navicon8"></i> -->
+                        <span class="font-normal">Search Filters</span>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.amenities">Amenities</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.foodCategory">Food Category</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.occasionType">Occasions Type</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.occasion">Occasions</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.timeSlot">Time Slot</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.venueCategory">Venue Category</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.venueType">Venue Type</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a md-ink-ripple>
+                        <span class="pull-right text-muted">
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                        <!-- <i class="navicon8"></i> -->
+                        <span class="font-normal">Venue Profile</span>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.eventStatus">Event Status</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.hallType">Hall Type</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.venueStatus">Venue Status</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a md-ink-ripple>
+                        <span class="pull-right text-muted">
+                            <i class="fa fa-caret-down"></i>
+                        </span>
+                        <!-- <i class="navicon8"></i> -->
+                        <span class="font-normal">Other</span>
+                    </a>
+                    <ul class="nav nav-sub">
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.accountType">Account Type</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.country">Country</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a md-ink-ripple ui-sref="dashboard.state">State</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon9"></i>
+                <span class="font-normal">Careers</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.currentOpenings">Current Opening</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addOpening">Add Opening</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.viewApplications">View Applications</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon12"></i>
+                <span class="font-normal">FAQs</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.faqs">FAQs</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addFaq">Add FAQ</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon10"></i>
+                <span class="font-normal">Manage Users</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.users">User List</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addUser">Add User</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon13"></i>
+                <span class="font-normal">Static Pages</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.staticPages">Static Page List</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addStaticPage">Add Static Page</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+                <i class="navicon15"></i>
+                <span class="font-normal">Testimonials</span>
+            </a>
+            <ul class="nav nav-sub">
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.testimonials">Testimonial List</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a md-ink-ripple ui-sref="dashboard.addTestimonial">Add Testimonial</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a md-ink-ripple ui-sref="dashboard.feedbacks">
+                <i class="navicon14"></i>
+                <span class="font-normal">Feedbacks</span>
+            </a>
+        </li>
+        <!-- <li>
+            <a md-ink-ripple ui-sref="dashboard.reports">
+                <i class="navicon11"></i>
+                <span class="font-normal">Reports</span>
+            </a>
+        </li> -->
+    </ul>
+</nav>

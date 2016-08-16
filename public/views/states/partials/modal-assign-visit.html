@@ -1,0 +1,29 @@
+<md-dialog ng-cloak>
+    <md-toolbar class="green">
+        <div class="md-toolbar-tools green">
+            <h2>Select Representative</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form name="forms.assignVisit" class="" role="form" novalidate ng-submit="assignVisit()">
+                        <md-input-container class="md-block">
+                            <label>Customer Representative</label>
+                            <md-select name="cr" ng-model="formData2.representativeId" required>
+                                <md-option value="{{cr.id}}" ng-repeat="cr in representatives">{{cr.name}}</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <button md-ink-ripple type="submit" class="md-btn md-raised green p-h-md pull-left">Save</button>
+                        <button md-ink-ripple type="button" class="md-btn md-raised p-h-md pull-right" ng-click="cancelAssign()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

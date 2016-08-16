@@ -1,0 +1,21 @@
+{
+  "name": "MEANPOCEVENT",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "crypto": "0.0.3",
+    "debug": "~2.2.0",
+    "ejs-locals": "^1.0.2",
+    "express": "~4.13.4",
+    "express-validator": "^2.20.8",
+    "lodash": "^4.15.0",
+    "mongoose": "^4.5.8",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
+  }
+}

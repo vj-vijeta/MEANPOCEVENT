@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>POC EVENT</title>
+
+	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/sb-admin-2.css">
+    <link rel="stylesheet" href="/assets/css/timeline.css">
+    <link rel="stylesheet" href="/assets/angular-loading-bar/build/loading-bar.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+</head>
+<body>
+	<!-- <div id="wrapper">
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header"></h1>
+				</div>
+			</div>
+			
+		</div>
+	</div> -->
+	<ui-view></ui-view>
+	<script type="text/javascript" src="/assets/js/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/assets/js/angular/angular-animate.min.js"></script>
+	<script type="text/javascript" src="/assets/js/angular/angular-resource.js"></script>
+	<script type="text/javascript" src="/assets/js/angular/angular-sanitize.js"></script>
+	<script type="text/javascript" src="/assets/js/ngStorage.js"></script>
+	<script type="text/javascript" src="/assets/js/loading-bar.js"></script>
+	<script type="text/javascript" src="/assets/js/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/assets/js/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="/assets/js/Chart.min.js"></script>
+	<script type="text/javascript" src="/assets/js/angular-chart.min.js"></script>
+	<script type="text/javascript" src="/assets/js/bundle.js"></script>
+
+	<% for(m in angular.modules) { var mod = angular.modules[m]; %>
+	    <script type="text/javascript" src="/modules/<%= mod %>"></script>
+	<% } %>
+	<% for(f in angular.factories) { var fact = angular.factories[f]; %>
+	    <script type="text/javascript" src="/factories/<%= fact %>"></script>
+	<% } %>
+	<% for(f in angular.directives) { var fact = angular.directives[f]; %>
+	    <script type="text/javascript" src="/directives/<%= fact %>"></script>
+	<% } %>
+	<% for(c in angular.controllers) { var ctrl = angular.controllers[c]; %>
+	    <script type="text/javascript" src="/controllers/<%= ctrl %>"></script>
+	<% } %>
+	<% for(c in angular.filters) { var ctrl = angular.filters[c]; %>
+	    <script type="text/javascript" src="/filters/<%= ctrl %>"></script>
+	<% } %>
+</body>
+</html>
