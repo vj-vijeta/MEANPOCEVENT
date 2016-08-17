@@ -16,6 +16,10 @@ Icon
 npm-debug.log
 node_modules/
 
+# Bower Config
+.bower-*/
+bower_components/
+
 # --------------------
 # SASS Files
 # --------------------
@@ -24,6 +28,5 @@ node_modules/
 # --------------------
 # Bower Files
 # --------------------
-.bower-*/
 .idea/
 nbproject/
