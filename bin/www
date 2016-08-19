@@ -19,7 +19,7 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-if (cluster.isMaster) {
+if (cluster.isMaster && false) {
 
 			// Count the machine's CPUs
 			var cpuCount = require('os').cpus().length;

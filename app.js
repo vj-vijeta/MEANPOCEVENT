@@ -14,9 +14,14 @@ mongoose.connect('mongodb://poc:poc@ds153815.mlab.com:53815/userevent');
 var routes = require('./routes/index');
 var api = require('./routes/api');
 
-
-
 var app = express();
+
+// Setting app.locals
+
+app.locals.apiUrls = {
+  user: 'http://104.237.2.155:3019/api',
+  event: 'http://104.237.2.155:3020/api'
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

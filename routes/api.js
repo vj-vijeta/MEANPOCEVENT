@@ -6,8 +6,8 @@ var events = require('../controllers/events')();
 
 router.post('/user/login', users.login);
 
-router.get('/event/single/:id', events.single);
-router.post('/event/list', events.list);
+router.get('/event/single/:id', events.common);
+router.post('/event/list', events.common);
 router.post('/event/purchase', events.purchase);
 
 module.exports = router;

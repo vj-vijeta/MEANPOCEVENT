@@ -1,7 +1,8 @@
 var mongoose = require('mongoose'),
     Event = require('../models/events'),
     Purchase = require('../models/purchases'),
-    crypto = require('crypto');
+    crypto = require('crypto'),
+	request = require('request');
 
 module.exports = function() {
     return {
@@ -113,6 +114,17 @@ module.exports = function() {
 					id: purchase.id
 				});
 			});
-        }
+        },
+		common: function(req, res, next) {
+			
+			var reqst = request({
+                method: req.method,
+                uri: req.app.locals.apiUrls.event + req.url,
+                body: req.body,
+                json: true
+            });
+            
+            reqst.pipe(res);
+		}
     };
 }
