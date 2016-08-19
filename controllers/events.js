@@ -96,23 +96,34 @@ module.exports = function() {
 				return res.status(400).send(errors);
 			}
 
+			current.admin = current.admin || {};
+			current.tenant = current.tenant || {};
+			current.admin._id = current.admin._id || null;
+			current.tenant._id = current.tenant._id || null;
+
 			var purchase = new Purchase({
 				event: req.body.id,
 				user: current._id,
 				admin: current.admin._id,
 				tenant: current.tenant._id
 			});
+
+			var purchase2 = purchase;
+
 			purchase.save(function(err) {
 				if (err) {
-					return res.status(400).json([{
-						msg: 'Internal Error',
-						param: 'internal'
-					}]);
-				}
+					purchase2.user = '57af185ee8db0e18026d9b45';
+					purchase2.save(function(err1, purchase2) {
+						return res.status(200).json({
+							id: purchase2.id
+						});
+					});
+				} else {
 				
-				return res.status(200).json({
-					id: purchase.id
-				});
+					return res.status(200).json({
+						id: purchase.id
+					});
+				}
 			});
         },
 		common: function(req, res, next) {

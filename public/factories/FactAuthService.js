@@ -3,6 +3,7 @@ angular.module('FactAuth', ['ngResource'])
 		
 		// var url = '/dashboard';
 		var rootURL = '/api/user';
+		var twURL = '/api/twitter'
 
 		return $resource('', {
 			id: '@id'
@@ -10,6 +11,11 @@ angular.module('FactAuth', ['ngResource'])
 			signin: {
 				url: rootURL + '/login',
 				method: 'POST',
+				isArray: false
+			},			
+			twitterSignIn: {
+				url: twURL + '/login',
+				method: 'GET',
 				isArray: false
 			}
 		});

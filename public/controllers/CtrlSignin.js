@@ -44,4 +44,17 @@ App.controller('CtrlSignin', ['$scope', '$rootScope', '$state', '$localStorage',
 
 		return false;
 	};
+
+	$scope.twitterSignIn = function() {
+		FactAuthService.twitterSignIn({}, function(data) {
+			$localStorage.twitter = {
+				token: data.token,
+				secret: data.secret
+			};
+			
+			location.href = 'https://api.twitter.com/oauth/authenticate?oauth_token=' + data.token;
+		}, function(error) {
+			$scope.errorMessage = error.data.msg || error.data[0].msg;
+		});
+	};
 }]);

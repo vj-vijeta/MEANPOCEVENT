@@ -16,6 +16,7 @@
     "lodash": "^4.15.0",
     "mongoose": "^4.5.8",
     "morgan": "~1.7.0",
+    "node-twitter-api": "^1.7.4",
     "request": "^2.74.0",
     "serve-favicon": "~2.3.0"
   }
