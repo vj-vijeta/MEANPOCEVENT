@@ -13,7 +13,7 @@ angular.module('FactEvents', ['ngResource'])
 				isArray: false
 			},
 			list: {
-				url: rootURL + '/list',
+				url: rootURL + '/listpublic',
 				method: 'POST',
 				isArray: false
 			},
