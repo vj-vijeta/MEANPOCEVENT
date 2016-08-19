@@ -14,8 +14,9 @@
 @width4: 310px; // Appears 3 times
 @width7: 50px; // Appears 2 times
 @width8: 100%; // Appears 2 times
-@width12: 30px; // Appears 3 times
-@width13: 70px; // Appears 3 times
+@width12: 0; // Appears 3 times
+@width13: 30px; // Appears 3 times
+@width14: 70px; // Appears 3 times
 
 // Height variables (appears count calculates by raw css)
 @height6: 50px; // Appears 3 times
@@ -51,7 +52,24 @@ body {
 	padding-right: 15px;
 	padding-top: 19px;
 }
-
+// @media {
+// 	(min-width :768px) {
+		.container {
+			max-width: 730px;
+		}
+// 	}
+// 	screen {
+// 		and {
+// 			(min-width {
+// 				&:768px) {
+					.header, .marketing, .footer {
+						padding-left: 0;
+						padding-right: 0;
+					}
+// 			}
+// 		}
+// 	}
+// }
 .container-narrow>hr {
 	margin: 30px 0;
 }
@@ -76,7 +94,20 @@ body {
 	min-height: 568px;
 	padding: 0 15px;
 }
-
+@media(min-width :768px) {
+		#page-wrapper {
+			position: inherit;
+			.sidebar {
+				z-index: 1;
+				border-left: 1px solid @color9;
+				margin-top: 51px;
+				margin: 0 0 0 250px;
+				padding: 0 30px;
+				position: absolute;
+				width: 2@width7;
+			}
+		}
+}
 .navbar-top-links {
 	margin-right: 0;
 	li {
@@ -288,7 +319,7 @@ table.dataTable {
 	line-height: 1.428571429;
 	padding: 6px 0;
 	text-align: center;
-	width: @width12;
+	width: @width13;
 }
 .btn-circle.btn-lg {
 	border-radius: 25px;
@@ -304,7 +335,7 @@ table.dataTable {
 	height: 70px;
 	line-height: 1.33;
 	padding: 10px 16px;
-	width: @width13;
+	width: @width14;
 }
 .show-grid[class^=col-] {
 	background-color: @color4!important;
@@ -483,7 +514,11 @@ table.dataTable {
 .timeline-body>p+p {
 	margin-top: 5px;
 }
-
+// @media(max-width :767px) {
+		ul.timeline:before {
+			left: 40px;
+		}
+// }
 ul.timeline>li>.timeline-panel {
 	float: right;
 	width: -moz-calc(@width8 - 90px);

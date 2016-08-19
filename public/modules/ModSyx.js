@@ -6,7 +6,6 @@ var App = angular
 		'ui.router',
 		'ui.bootstrap',
 		'angular-loading-bar',
-		'chart.js',
 		'FactInterceptors',
 		'FactAuth',
 		'FactEvents',

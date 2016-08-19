@@ -39,6 +39,5 @@ App.controller('CtrlIndex', ['$scope', '$rootScope', function ($scope, $rootScop
         // and fire search in case its value is not empty
         var c = new components();
         c.load("chartapp");
-    };
-    
+    };    
 }]);
