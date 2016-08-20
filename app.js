@@ -13,6 +13,7 @@ mongoose.connect('mongodb://poc:poc@ds153815.mlab.com:53815/userevent');
 
 var routes = require('./routes/index');
 var api = require('./routes/api');
+var pg = require('./routes/pg');
 
 var app = express();
 
@@ -20,7 +21,8 @@ var app = express();
 
 app.locals.apiUrls = {
   user: 'http://104.237.2.155:3019/api',
-  event: 'http://104.237.2.155:3020/api'
+  event: 'http://104.237.2.155:3020/api',
+  pgEvent: 'http://104.237.2.155:3020/pg/api',
 };
 
 // view engine setup
@@ -39,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 
 app.use('/api', api);
+app.use('/pg/api', pg);
 app.use('/', routes);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

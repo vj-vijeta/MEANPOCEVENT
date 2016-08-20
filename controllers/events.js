@@ -136,6 +136,16 @@ module.exports = function() {
             });
             
             reqst.pipe(res);
+		},
+		pgCommon: function(req, res, next) {
+			var reqst = request({
+                method: req.method,
+                uri: req.app.locals.apiUrls.pgEvent + req.url,
+                body: req.body,
+                json: true
+            });
+            
+            reqst.pipe(res);
 		}
     };
 }
