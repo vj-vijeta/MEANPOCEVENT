@@ -1,7 +1,7 @@
 module.exports = {
     twitter: {
-        consumerKey: 'qofW2XivgfxeOpP4fcuI3A0VJ',//79TG1w4Wp3lpL8mEuglfrClRd',
-        consumerSecret: 'zN61QnIuoqxgKDGj7JRQXkXPp3Qtrq62WC8aVP8ZzRE0Z4erih',
+        consumerKey: 'dd8Xb4zODU1TW5dPNKPBktCFX',//79TG1w4Wp3lpL8mEuglfrClRd',
+        consumerSecret: 'tcLtnn5Sz5RMZm58HORV1rGF0dnBwoV6dLL9VpyKv89gKR5F69',
         callback: '/api/twitter/callback'
     },
     host: '0.0.0.0',
