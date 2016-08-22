@@ -3,17 +3,18 @@ angular.module('FactEvents', ['ngResource'])
 		
 		// var url = '/dashboard';
 		var rootURL = '/api/event';
+		var pgURL = '/pg/api/event';
 
 		return $resource('', {
 			id: '@id'
 		}, {
             single: {
-				url: rootURL + '/single/:id',
+				url: pgURL + '/single/:id',
 				method: 'GET',
 				isArray: false
 			},
 			list: {
-				url: rootURL + '/listpublic',
+				url: pgURL + '/listpublic',
 				method: 'POST',
 				isArray: false
 			},
