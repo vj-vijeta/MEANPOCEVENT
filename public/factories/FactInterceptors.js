@@ -3,7 +3,7 @@ angular.module('FactInterceptors', [])
 		return {
 			response: function(response) {
 				if (response.status === 401) {
-					// $location.url($meanConfig.loginPage);
+
 					return $q.reject(response);
 				}
 				return response || $q.when(response);
@@ -11,7 +11,6 @@ angular.module('FactInterceptors', [])
 			responseError: function(rejection) {
 
 				if (rejection.status === 401) {
-					// $location.url($meanConfig.loginPage);
 					return $q.reject(rejection);
 				}
 				return $q.reject(rejection);

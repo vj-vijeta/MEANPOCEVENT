@@ -1,82 +1,8 @@
-var mongoose = require('mongoose'),
-    Event = require('../models/events'),
-    Purchase = require('../models/purchases'),
-    crypto = require('crypto'),
+var Purchase = require('../models/purchases'),
 	request = require('request');
 
 module.exports = function() {
     return {
-        single: function(req, res, next) {
-
-			var id = req.params.id;
-			if(!id) {
-				return res.status(400).send([{
-					msg: 'ID required',
-					param: 'id'
-				}]);
-			}
-
-            Event.findOne({
-                _id: id
-            })
-			.populate('admin')
-			.populate('tenant')
-			.exec(function(err, event) {
-                if(err) {
-					if(err.kind == 'ObjectId') {
-						return res.status(400).json([{
-							msg: 'Event Not Found',
-							param: 'id'
-						}]);
-					}
-					return res.status(400).json([{
-						msg: 'Internal error',
-						param: null
-					}]);
-				}
-
-				return res.status(200).json({
-					event: event
-				});
-            });
-        },
-        list: function(req, res, next) {
-            
-			var current = req.body.current;
-
-			var skip = req.body.skip || 0;
-			var limit = req.body.limit || 10;
-
-			var where = {};
-
-			Event.count(where, function(err, count) {
-
-				if(err) {
-					// return done(err);
-					return res.status(400).json([{
-						msg: err,
-						param: null
-					}]);
-				}
-
-				Event.find(where)
-				.skip(skip)
-				.limit(limit)
-				.exec(function(err, list) {
-					if(err) {
-						return res.status(400).send([{
-							msg: 'Error',
-							param: null
-						}])
-					}
-
-					return res.status(200).json({
-						count: count,
-						list: list
-					});
-				});
-			});
-        },
 		purchase: function(req, res, next) {
 
 			var current = req.body.current;
@@ -126,17 +52,6 @@ module.exports = function() {
 				}
 			});
         },
-		common: function(req, res, next) {
-			
-			var reqst = request({
-                method: req.method,
-                uri: req.app.locals.apiUrls.event + req.url,
-                body: req.body,
-                json: true
-            });
-            
-            reqst.pipe(res);
-		},
 		pgCommon: function(req, res, next) {
 			var reqst = request({
                 method: req.method,

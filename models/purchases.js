@@ -32,16 +32,14 @@ var PurchaseSchema = new Schema({
     ref: 'User'
   },
   user: {
-    type: Schema.Types.ObjectId,
+    type: String,
     required: false,
-    default: null,
-    ref: 'User'
+    default: null
   },
   event: {
-    type: Schema.Types.ObjectId,
+    type: String,
     required: false,
-    default: null,
-    ref: 'Event'
+    default: null
   },
   date: {
     type: Date,
