@@ -10,7 +10,7 @@ describe('USER API', function() {
   * Test the /api/user/login route
   */
   describe('Testing /api/user/login POST', function() {
-      it('it should return bad request error 400', function(done) {
+      it('it should return bad request error with status code 400', function(done) {
         chai.request(url)
             .post('/login')
             .end(function(err, res) {
@@ -20,7 +20,7 @@ describe('USER API', function() {
             });
       });
       
-      it('it should return user object with 200', function(done) {
+      it('it should return user object with status code 200', function(done) {
         chai.request(url)
             .post('/login')
             .send({email: 'u1@user.com', password: 'user one'})
