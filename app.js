@@ -21,8 +21,11 @@ var app = express();
 
 app.locals.apiUrls = {
   user: 'http://104.237.2.155:3019/api',
+  userHost: '104.237.2.155:3019',
   event: 'http://104.237.2.155:3020/api',
+  eventHost: '104.237.2.155:3020',
   pgEvent: 'http://104.237.2.155:3020/pg/api',
+  proxy: 'http://37.247.116.155:8000'
 };
 
 // view engine setup

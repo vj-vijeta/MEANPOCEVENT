@@ -13,6 +13,18 @@ module.exports = function() {
                 body: req.body,
                 json: true
             });
+
+            // var reqst = request({
+            //     method: req.method,
+			// 	headers: {
+			// 		header: 'Host:' + req.app.locals.apiUrls.userHost
+			// 		// header: 'Host:' + req.headers.host
+			// 	},
+            //     uri: req.app.locals.apiUrls.proxy + '/pg/api' + req.url,
+            //     // uri: req.app.locals.apiUrls.pgEvent + req.url,
+            //     body: req.body,
+            //     json: true
+            // });
             
             reqst.pipe(res);
         }

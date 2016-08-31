@@ -9,6 +9,7 @@ var App = angular
 		'FactInterceptors',
 		'FactAuth',
 		'FactEvents',
+		'FactSocket',
 	]);
 
 App.run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar', '$localStorage', function ($rootScope, $state, $stateParams, cfpLoadingBar, $localStorage) {

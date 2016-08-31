@@ -1,4 +1,6 @@
-App.controller('CtrlSingleEvent', ['$scope', '$stateParams', '$localStorage', 'FactEventsService', function($scope, $stateParams, $localStorage, FactEventsService) {
+App.controller('CtrlSingleEvent', ['$scope', '$stateParams', '$localStorage', 'FactEventsService', 'FactSocketService', function($scope, $stateParams, $localStorage, FactEventsService, FactSocketService) {
+
+    console.log(FactSocketService)
 
     $scope.event = {};
     $scope.purchased = false;
@@ -34,4 +36,11 @@ App.controller('CtrlSingleEvent', ['$scope', '$stateParams', '$localStorage', 'F
             $scope.errorMessage = err.data.msg;
         });
     };
+
+    // FactSocketService.connect();
+
+    // FactSocketService.on('new message', function(data) {
+    //     console.log(data);
+    // });
+
 }]);
