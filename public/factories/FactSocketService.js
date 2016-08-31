@@ -9,7 +9,7 @@ angular.module('FactSocket', ['ngResource'])
 		// return socket;
 		return {
 			connect: function() {
-				socket = io.connect('http://107.155.87.7:3004', {
+				socket = io.connect('http://104.237.2.155:3026', {
 					forceNew: true
 				});
 			},
