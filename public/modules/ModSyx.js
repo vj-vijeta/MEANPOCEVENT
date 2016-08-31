@@ -101,6 +101,11 @@ App.run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar', '$localStorage
 			controller: 'CtrlEvents',
 			data: { title: 'Events', folded: true }
 		})
+		.state('dashboard.notifications', {
+			url: '/notifications',
+			templateUrl: '/views/states/dashboard/notifications.html',
+			data: { title: 'Events', folded: true }
+		})
 		.state('dashboard.event', {
 			url: '/event/:id',
 			params: {

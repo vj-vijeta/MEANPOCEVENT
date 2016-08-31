@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Notification List
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="noti in notifications">{{noti}}</li>
+                    <li if="!notifications">Waiting for new Event to be create</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
