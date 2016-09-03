@@ -121,24 +121,24 @@ module.exports = function() {
 			});
         },
 		pgCommon: function(req, res, next) {
-			var reqst = request({
-                method: req.method,
-                uri: req.app.locals.apiUrls.pgEvent + req.url,
-                body: req.body,
-                json: true
-            });
-
 			// var reqst = request({
             //     method: req.method,
-			// 	headers: {
-			// 		header: 'Host:' + req.app.locals.apiUrls.eventHost
-			// 		// header: 'Host:' + req.headers.host
-			// 	},
-            //     uri: req.app.locals.apiUrls.proxy + '/pg/api' + req.url,
-            //     // uri: req.app.locals.apiUrls.pgEvent + req.url,
+            //     uri: req.app.locals.apiUrls.pgEvent + req.url,
             //     body: req.body,
             //     json: true
             // });
+
+			var reqst = request({
+                method: req.method,
+				headers: {
+					header: 'Host:' + req.app.locals.apiUrls.eventHost
+					// header: 'Host:' + req.headers.host
+				},
+                uri: req.app.locals.apiUrls.proxy + '/pg/api' + req.url,
+                // uri: req.app.locals.apiUrls.pgEvent + req.url,
+                body: req.body,
+                json: true
+            });
             
             reqst.pipe(res);
 		}
