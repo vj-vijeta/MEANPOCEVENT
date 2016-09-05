@@ -8,7 +8,9 @@ App.controller('CtrlSyx', ['$scope', '$localStorage', '$rootScope', 'FactSocketS
 
     FactSocketService.on('event', function(data) {
         console.log(data);
-        $rootScope.notifications.push(data.value.value);
+        $rootScope.$apply(function() {
+            $rootScope.notifications.push(data.value.value);
+        });
     });
 
     window.onbeforeunload = function() {
