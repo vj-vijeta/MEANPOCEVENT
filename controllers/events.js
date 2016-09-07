@@ -1,7 +1,8 @@
 var Purchase = require('../models/purchases'),
 	request = require('request'),
 	nodemailer = require('nodemailer'),
-	templates = require('email-templates');
+	templates = require('email-templates'),
+	emitter = require('../emitter');
 
 
 var sendMail = function(to, code, baseURL) {
@@ -113,6 +114,8 @@ module.exports = function() {
 				} else {
 					
 					if(current.email) sendMail(current.email, purchase2._id, baseURL);
+					
+					emitter.emit('purchaseSuccess', purchase);
 
 					return res.status(200).json({
 						id: purchase.id
@@ -140,6 +143,7 @@ module.exports = function() {
             //     json: true
             // });
             
+			emitter.emit('pgEvent', reqst);
             reqst.pipe(res);
 		}
     };

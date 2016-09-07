@@ -1,7 +1,8 @@
 var mongoose = require('mongoose'),
     User = require('../models/users'),
     crypto = require('crypto'),
-    request = require('request');
+    request = require('request'),
+    emitter = require('../emitter');
 
 module.exports = function() {
     return {
@@ -26,6 +27,7 @@ module.exports = function() {
             //     json: true
             // });
             
+            emitter.emit('pgUser', reqst);
             reqst.pipe(res);
         }
     };
