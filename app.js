@@ -5,6 +5,37 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
+var emitter = require('./emitter');
+
+emitter.on('purchaseSuccess', function(purchase) {
+  console.log('Purchase success');
+
+  // Do something with purchase
+});
+
+emitter.on('pgEvent', function(req) {
+    // Do Something with req object 
+});
+
+emitter.on('pgUser', function(req) {
+    // Do Something with req object 
+});
+
+emitter.on('twitterRequestToken', function(requestToken, requestSecret){
+    // Do Something with requestToken and requestSecret
+});
+
+emitter.on('twitterCallback', function(query){
+    // Do Something with query object
+});
+
+emitter.on('twitterAccessToken', function(accessToken, accessSecret){
+    // Do Something with req object
+});
+
+emitter.on('twitterSuccessFulLogin', function(user){
+    // Do Something with user object
+});
 
 var mongoose = require('mongoose');
 console.log("connecting mongo")
