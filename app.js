@@ -54,7 +54,7 @@ app.locals.apiUrls = {
   userHost: '104.237.2.155:3019',
   event: 'http://104.237.2.155:3020/api',
   eventHost: '104.237.2.155:3020',
-  pgEvent: 'http://104.237.2.155:3020/pg/api',
+  pgEvent: 'http://37.247.116.155:8000/pg/api',
   proxy: 'http://37.247.116.155:8000'
 };
 
