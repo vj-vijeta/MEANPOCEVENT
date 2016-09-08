@@ -52,8 +52,6 @@ var app = express();
 app.locals.apiUrls = {
   user: 'http://37.247.116.155:8000/api',
   userHost: '37.247.116.155:8000',
-  event: 'http://104.237.2.155:3020/api',
-  eventHost: '104.237.2.155:3020',
   pgEvent: 'http://37.247.116.155:8000/pg/api'
 };
 
