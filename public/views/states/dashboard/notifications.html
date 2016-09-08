@@ -7,7 +7,7 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <ul>
-                    <li ng-repeat="noti in notifications">{{noti}}</li>
+                    <li ng-repeat="noti in notifications track by $index">{{noti}}</li>
                     <li if="!notifications">Waiting for new Event to be create</li>
                 </ul>
             </div>

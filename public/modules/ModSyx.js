@@ -93,7 +93,7 @@ App.run(['$rootScope', '$state', '$stateParams', 'cfpLoadingBar', '$localStorage
 			url: '/',
 			templateUrl: '/views/states/dashboard/index.html',
 			controller: 'CtrlIndex',
-			data: { title: 'Dashboard', folded: true }
+			data: { title: 'Dashboard' }
 		})
 		.state('dashboard.events', {
 			url: '/events',
